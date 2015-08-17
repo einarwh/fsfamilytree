@@ -1,0 +1,24 @@
+let stack = object
+  val mutable v = [2; 4; 6]
+
+  method push h =
+    v <- h :: v
+
+  method pop =
+    match v with
+      | [] -> None
+      | h :: t -> v <- t; Some h
+
+  method top =
+    match v with
+      | [] -> None
+      | h :: t -> Some h
+
+end;;
+
+stack#top;;
+stack#pop;;
+stack#top;;
+stack#push 17;;
+stack#top;;
+
