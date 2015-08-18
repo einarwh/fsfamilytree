@@ -1,9 +1,9 @@
 datatype suit = Hearts | Diamonds | Spades | Clubs;;
-datatype rank = Ace | King | Queen | Jack | NumericCard of int;;
+datatype rank = Ace | King | Queen | Jack | Numeric of int;;
 datatype card = Card of rank * suit;;
 
 val c1 = Card (Ace, Spades);;
-val c2 = Card (NumericCard 7, Hearts);;
+val c2 = Card (Numeric 7, Hearts);;
 
 fun rank_of c = case c of Card (r, s) => r;;
 
@@ -13,7 +13,7 @@ fun value_of c =
   | King => 13
   | Queen => 12
   | Jack => 11
-  | NumericCard n => n;;
+  | Numeric n => n;;
 
 fun count (r : rank) (hand : card list) =
   case hand of 
@@ -23,5 +23,5 @@ fun count (r : rank) (hand : card list) =
 
 val count_queens = count Queen;;
 
-val h1 = [ Card (Queen, Hearts), Card (Queen, Spades), Card (NumericCard 5, Hearts), Card (Queen, Clubs), Card (Jack, Diamonds) ];;
-val h2 = [ Card (NumericCard 2, Clubs), Card (Ace, Clubs), Card (Jack, Hearts), Card (Jack, Diamonds), Card (Jack, Spades) ];;
+val h1 = [ Card (Queen, Hearts), Card (Queen, Spades), Card (Numeric 5, Hearts), Card (Queen, Clubs), Card (Jack, Diamonds) ];;
+val h2 = [ Card (Numeric 10, Clubs), Card (Ace, Clubs), Card (Jack, Hearts), Card (Jack, Diamonds), Card (Jack, Spades) ];;
