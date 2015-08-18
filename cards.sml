@@ -22,3 +22,6 @@ fun count (r : rank) (hand : card list) =
     if r = r' then 1 + count r cs' else count r cs';;
 
 val count_queens = count Queen;;
+
+val h1 = [ Card (Queen, Hearts), Card (Queen, Spades), Card (NumericCard 5, Hearts), Card (Queen, Clubs), Card (Jack, Diamonds) ];;
+val h2 = [ Card (NumericCard 2, Clubs), Card (Ace, Clubs), Card (Jack, Hearts), Card (Jack, Diamonds), Card (Jack, Spades) ];;
